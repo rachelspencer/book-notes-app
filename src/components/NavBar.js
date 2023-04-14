@@ -1,8 +1,19 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
 function NavBar() {
     return (
         <div>
-            <h3>Your Library</h3>
-            <h3>Add new book</h3>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink exact="true" to="/home" className="active-link">Your Library</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/add" className="active-link">Add New Book</NavLink>
+                    </li>
+                </ul>
+            </nav>
         </div>
     );
 };

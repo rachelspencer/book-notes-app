@@ -1,8 +1,10 @@
+import React from 'react';
 import { useState } from 'react';
-import MainDisplayHeader from './MainDisplayHeader';
-import NavBar from './NavBar';
-import BookList from './BookList';
-import SearchBar from './SearchBar';
+import MainDisplayHeader from '../components/MainDisplayHeader';
+import SearchBar from '../components/SearchBar';
+import NavBar from '../components/NavBar';
+import BookList from '../components/BookList';
+
 
 function MainDisplay() {
     const [books, setBooks ] = useState([]);

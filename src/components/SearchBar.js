@@ -1,8 +1,13 @@
+import React from "react";
+
 function SearchBar() {
+
     return (
-        <input
-        placeholder="Search by titles"
-        ></input>
+        // <form onSubmit={}>
+            <input placeholder="Search by titles">
+
+            </input>
+        // </form>
     )
 }
 

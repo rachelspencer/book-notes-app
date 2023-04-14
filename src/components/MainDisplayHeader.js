@@ -1,3 +1,4 @@
+import React from "react";
 import SignOut from "./SignOut";
 
 function MainDisplayHeader() {
