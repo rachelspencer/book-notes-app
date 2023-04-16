@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from 'axios'
 import AuthContext from "../context/authContext";
+// import Modal from "./Modal";
 
 function Auth() {
     const authCtx = useContext(AuthContext);
@@ -8,6 +9,7 @@ function Auth() {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ register, setRegister ] = useState(true);
+    const [showModal, setShowModal ] = useState(false);
 
     const handleUsername = (event) => {
         setUsername(event.target.value)
@@ -29,7 +31,7 @@ function Auth() {
 
         const body = {
             username,
-            password
+            password,
         };
 
         const url = "http://localhost:3001"
@@ -45,13 +47,14 @@ function Auth() {
                 response = body
             }
         } catch (error) {
-            console.log(error)
-            setUsername('')
-            setPassword('')
+            console.log('FE Error', error);
+            setUsername('');
+            setPassword('');
+            // setShowModal(true);
             }
         console.log('response auth FE', response);
         // authCtx.login(response.data.login, response.data.userId, response.data.token)
-        }
+        };
     
     // create a form to capture user inputs
     return (
