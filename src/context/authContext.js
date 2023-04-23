@@ -38,7 +38,7 @@ const getLocalData = () => {
 
 };
 
-export const AuthContextProvider = (props) => {
+export const AuthContextProvider = ({children}) => {
   const localData = getLocalData();
   // console.log('local data from AuthContextProvider', localData);
 
@@ -90,7 +90,7 @@ export const AuthContextProvider = (props) => {
    
   return (
     <AuthContext.Provider value={contextValue}>
-      {props.children}
+      {children}
     </AuthContext.Provider>
   )
 };

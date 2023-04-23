@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import AuthContext from './context/authContext'
 import Login from "./pages/Login";
 import MainDisplay from "./pages/MainDisplay";
-import BookShow from './components/BookShow';
 import NavBar from './components/NavBar';
+import MainDisplayHeader from './components/MainDisplayHeader';
+import AddNewBook from './pages/AddNewBook';
 
 function App() {
     const authCtx = useContext(AuthContext);
+
     return (
-        <BrowserRouter>
+        <div>
+            {authCtx.token && <MainDisplayHeader/>}
+            {authCtx.token && <NavBar/>}
             <Routes>
                 <Route exact path="/auth" element={!authCtx.token ? <Login/> : <Navigate to='/'/>}/>
                 <Route path="/" element={authCtx.token ? <MainDisplay/> : <Navigate to='/auth'/>}/>
-                <Route path="/bookshow" element={<BookShow/>}/>
-                <Route path="/add" element={<NavBar/>}/>
+                <Route path="/add" element={<AddNewBook/>}/>
             </Routes>
-        </BrowserRouter>
+        </div>
     );
 };
 

@@ -9,7 +9,7 @@ function SignOut() {
         authCtx.logout()
     }
     return (
-        <div onClick={handleClick}>
+        <div className="tbd" onClick={handleClick}>
             <button className="tbd">Sign Out</button>
         </div>
     );
