@@ -3,14 +3,14 @@
 // import axios from "axios";
 import BookShow from "./BookShow";
 
-function BookList({cityImages}) {
-        const renderedImages = cityImages.map((cityImage) => {
-            return <BookShow key={cityImage.id} cityImage={cityImage}/>
-        });
+function BookList({book}) {
+        // const renderedImages = cityImages.map((cityImage, i) => {
+        //     return <BookShow key={i} cityImage={cityImage}/>
+        // });
 
         return (
             <div className="tbd">
-                {renderedImages}
+                <BookShow book={book}/>
             </div>
         );
     };

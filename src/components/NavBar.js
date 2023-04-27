@@ -7,7 +7,7 @@ function NavBar() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink exact="true" to="/home" className="active-link">Your Library</NavLink>
+                        <NavLink exact="true" to="/" className="active-link">Your Library</NavLink>
                     </li>
                     <li>
                         <NavLink to="/add" className="active-link">Add New Book</NavLink>

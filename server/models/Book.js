@@ -4,23 +4,20 @@
 const { DataTypes } = require('sequelize');
 // Imports the Sequelize instance, used to define the data model and interact with the db
 const { sequelize } = require('../util/database');
-const { User } = require('./user');
-const { BookCovers } = require('./bookCovers');
+const { User } = require('./User');
 
 module.exports = {
 
-    UsersBooks: sequelize.define('usersBook', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true
-        },
+    Book: sequelize.define('book', {
+        // id: {
+        //     type: DataTypes.INTEGER,
+        //     autoIncrement: true,
+        //     allowNull: false,
+        //     primaryKey: true
+        // },
+        cover: DataTypes.STRING(2000),
         title: DataTypes.STRING,
         author: DataTypes.STRING,
-        cover: DataTypes.BLOB,
-        note: DataTypes.STRING,
-        quote:DataTypes.STRING,
         userId: {
             type: DataTypes.INTEGER,
             references: {
@@ -28,12 +25,12 @@ module.exports = {
               key: 'id'
             } 
         },
-        bookCoverId: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: BookCovers,
-              key: 'id'
-            }, 
-        }    
+        // bookCoverId: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //       model: BookCovers,
+        //       key: 'id'
+        //     }, 
+        // }    
     })
 };

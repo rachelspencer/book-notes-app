@@ -1,11 +1,22 @@
-import React from "react";
-// import BookEdit from "./BookEdit ";
+import { useContext } from "react"
+import { createBook } from '../api';
+import AuthContext from "../context/authContext";
 
-function BookShow({cityImage}) {
+function BookShow({book}) {
+    // console.log('url', book);
+    // console.log("sml url string:", book?.thumbnails?.small)
+    const newUrl = (book?.thumbnails?.small || '').replace('http', 'https');
+    console.log(newUrl)
+
+    const { userId } = useContext(AuthContext);
+    const handleClick = (event) => {
+        createBook( { userId, newUrl, ...book } )
+    };
 
     return (
         <div>
-            <img src={cityImage.urls.small} alt={cityImage.alt_description}/>
+            <img src={newUrl} alt="book cover" />
+            <button className="tbd" onClick={handleClick} >Add to Library</button>
         </div>
     )
 }
