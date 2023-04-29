@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from 'axios';
 import AuthContext from "../context/authContext";
+import './Auth.css';
 
 function Auth() {
     const authCtx = useContext(AuthContext);
@@ -53,26 +54,31 @@ function Auth() {
     // create a form to capture user inputs
     return (
         <main>
-            <form className="tbd" onSubmit={handleSubmit}>
-                <input
-                    className="tbd"
-                    placeholder="Username"
-                    value={username}
-                    type="text"
-                    onChange={handleUsername}
-                />
-                <input
-                    className="tbd"
-                    placeholder="Password"
-                    value={password}
-                    type="text"
-                    onChange={handlePassword}
-                />
-                <button className="tbd">
-                    {register ? "Register" : "Login"}
-                </button>
-            </form>
-            <button className="tbd" onClick={handleClick}>Need to {register? "Login" : "Register"}?</button>
+            <h1>BookNotes</h1>
+            <h3>notes and quotes for books you've read</h3>
+            <div className="login">
+                <form onSubmit={handleSubmit}>
+                    <input
+                        className="tbd"
+                        placeholder="Username"
+                        value={username}
+                        type="text"
+                        onChange={handleUsername}
+                    />
+                    <input
+                        className="tbd"
+                        placeholder="Password"
+                        value={password}
+                        type="text"
+                        onChange={handlePassword}
+                    />
+                    <button className="tbd">
+                        {register ? "Register" : "Login"}
+                    </button>
+                </form>
+                <button
+                    className="tbd" onClick={handleClick}>Need to {register? "Login" : "Register"}?</button>
+            </div>
         </main>
     );
 };
