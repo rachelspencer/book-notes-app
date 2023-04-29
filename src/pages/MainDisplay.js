@@ -22,7 +22,7 @@ function MainDisplay() {
     return (
         <div>
             <SearchBar />
-            <BookList books={books}/>
+            <BookList isLibrary books={books}/>
         </div>
     );
 };

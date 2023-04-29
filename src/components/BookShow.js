@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { createBook } from '../api';
 import AuthContext from "../context/authContext";
 
-function BookShow({book}) {
+function BookShow({isInLibrary, book}) {
     const { userId } = useContext(AuthContext);
     const coverUrl = book.coverUrl || book?.thumbnails?.small;
     if (!coverUrl) {
@@ -17,7 +17,12 @@ function BookShow({book}) {
     return (
         <div>
             <img src={coverUrl.replace('http', 'https')} alt="book cover" />
-            <button className="tbd" onClick={handleClick} >Add to Library</button>
+            
+            {!isInLibrary && (
+                <button className="tbd" onClick={handleClick}>
+                    Add to Library
+                </button>
+            )}
         </div>
     )
 }

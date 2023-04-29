@@ -3,13 +3,13 @@ import BookShow from "./BookShow";
 //     books: [{ title: 'Rachel Book' }]
 // }
 
-function BookList({ books = [] }) {
+function BookList({ isLibrary, books = [] }) {
     if (!books.length) {
         return null;
     };
 
     const renderBooks = () => books.map((book, i) => {
-        return <BookShow key={i} book={book}/>
+        return <BookShow isInLibrary={isLibrary} key={i} book={book}/>
     });
 
     return (

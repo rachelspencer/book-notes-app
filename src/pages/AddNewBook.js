@@ -16,7 +16,7 @@ const AddNewBook = () => {
         <div>
             <h3>Add new book</h3>
             <SearchBar onSubmit={handleSubmit}/>
-            <BookList books={[book]}/>
+            <BookList isLibrary={false} books={[book]}/>
         </div>
     );
 };
