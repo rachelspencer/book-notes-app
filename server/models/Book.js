@@ -15,7 +15,7 @@ module.exports = {
         //     allowNull: false,
         //     primaryKey: true
         // },
-        cover: DataTypes.STRING(2000),
+        coverUrl: DataTypes.STRING(2000),
         title: DataTypes.STRING,
         author: DataTypes.STRING,
         userId: {

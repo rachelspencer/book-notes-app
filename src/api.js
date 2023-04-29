@@ -23,16 +23,17 @@ export const searchBookCovers = async (term) => {
   
 export const createBook = async (data) => {
   try {
-    const { bookInfo, userId, newUrl } = data;
+    const { bookInfo, userId, coverUrl } = data;
     const { title, authors } = bookInfo;
-    console.log(bookInfo);
+    console.log("Book info:", bookInfo);
+    console.log("coverUrl:", coverUrl)
   
     const response = await axios.post(
       `${baseUrl}/books`,
       {
         author: authors[0],
         userId,
-        newUrl,
+        coverUrl,
         title, 
       }
     )
@@ -45,6 +46,23 @@ export const createBook = async (data) => {
   }
 };
 
+export const getBooksForUser = async (userId) => {
+  try {
+    const parsedUserId = parseInt(userId);
+    console.log("data in getbooksforusers", typeof parsedUserId)
+    const response = await axios.get(`${baseUrl}/books`, {
+      params: {
+        userId: parsedUserId,
+      }
+    });
+    
+    return response;
+
+  } catch (error) {
+    console.log('Error getting user books')
+    throw error;
+  }
+} ;
 
 
 // Unsplash API call 

@@ -1,5 +1,6 @@
 import React from "react";
 import SignOut from "./SignOut";
+import './MainDisplayHeader.css'
 
 function MainDisplayHeader() {
     return (

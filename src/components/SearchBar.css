@@ -1,0 +1,27 @@
+/* ::placeholder {
+    font-family: 'Open Sans', regular;
+} */
+
+.search-bar {
+    /* border: 1px solid lightgray; */
+    /* border-radius: 30px; */
+    padding: 10px;
+}
+
+.search-bar form {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.search_bar_input {
+    border-radius: 30px;
+    flex: 2;
+}
+
+.search_bar_btn {
+    border-radius: 30px;
+    flex: 1;
+}
+
+

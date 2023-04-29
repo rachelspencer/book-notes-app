@@ -17,14 +17,13 @@ User.hasMany(Book);
 Book.belongsTo(User)
 
 const { register, login } = require('./controllers/auth')
-// const { getAllBooks, getBook, addBook } = require('./controllers/books')
+const { getAllBooks } = require('./controllers/books')
 const { addBook } = require('./controllers/userBooks')
 
 // Auth
 app.post('/register', register)
 app.post('/login', login)
-// app.get('/books', getAllBooks)
-// app.get('/books/:title', getBook)
+app.get('/books', getAllBooks)
 app.post('/books', addBook);
 
 sequelize.sync()

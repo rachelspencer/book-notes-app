@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import './SearchBar.css';
 // import SearchContext from "../context/searchContext";
 
 const SearchBar = ({onSubmit}) => {
@@ -17,10 +18,10 @@ const SearchBar = ({onSubmit}) => {
     };
     
     return (
-        <div className="tbd">
+        <div className='search-bar'>
             <form onSubmit={handleFormSubmit}>
-                <input type="text" value={term} onChange={handleChange} placeholder="Book name"></input>
-                <button className="tbd" type="submit">Search</button>
+                <input className="search_bar_input" type="text" value={term} onChange={handleChange} placeholder="Book name"></input>
+                <button className="search_bar_btn" type="submit">Search</button>
             </form>
         </div>
         

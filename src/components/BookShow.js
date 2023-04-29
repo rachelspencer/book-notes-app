@@ -3,19 +3,20 @@ import { createBook } from '../api';
 import AuthContext from "../context/authContext";
 
 function BookShow({book}) {
-    // console.log('url', book);
-    // console.log("sml url string:", book?.thumbnails?.small)
-    const newUrl = (book?.thumbnails?.small || '').replace('http', 'https');
-    console.log(newUrl)
-
     const { userId } = useContext(AuthContext);
+    const coverUrl = book.coverUrl || book?.thumbnails?.small;
+    if (!coverUrl) {
+        return null;
+    }
+
     const handleClick = (event) => {
-        createBook( { userId, newUrl, ...book } )
+        console.log("coverURL:", coverUrl)
+        createBook( { userId, coverUrl, ...book } )
     };
 
     return (
         <div>
-            <img src={newUrl} alt="book cover" />
+            <img src={coverUrl.replace('http', 'https')} alt="book cover" />
             <button className="tbd" onClick={handleClick} >Add to Library</button>
         </div>
     )
