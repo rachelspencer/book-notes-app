@@ -55,18 +55,18 @@ function Auth() {
     return (
         <main>
             <h1>BookNotes</h1>
-            <h3>notes and quotes for books you've read</h3>
+            <h3 className="landing_page_tag">notes and quotes for books you've read</h3>
             <div className="login">
-                <form onSubmit={handleSubmit}>
+                <form className ="auth_form" onSubmit={handleSubmit}>
                     <input
-                        className="tbd"
+                        className="username_pw_input"
                         placeholder="Username"
                         value={username}
                         type="text"
                         onChange={handleUsername}
                     />
                     <input
-                        className="tbd"
+                        className="username_pw_input"
                         placeholder="Password"
                         value={password}
                         type="text"

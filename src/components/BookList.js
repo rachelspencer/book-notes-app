@@ -1,7 +1,5 @@
 import BookShow from "./BookShow";
-// props = {
-//     books: [{ title: 'Rachel Book' }]
-// }
+import './BookList.css';
 
 function BookList({ isLibrary, books = [] }) {
     if (!books.length) {
@@ -13,7 +11,7 @@ function BookList({ isLibrary, books = [] }) {
     });
 
     return (
-        <div className="tbd">
+        <div className="book_list_container">
             {renderBooks()}
         </div>
     );

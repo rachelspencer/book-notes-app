@@ -9,7 +9,7 @@ h1 {
     margin-bottom: 5px;
 }
 
-h3 {
+.landing_page_tag {
     font-family: 'Work Sans', sans-serif;
     font-size: 17px;
     text-align: center;
@@ -22,8 +22,8 @@ h3 {
 }
 
 .login {
-    width: 400px;
-    height: 150px;
+    width: 450px;
+    height: 185px;
     margin: 0 auto;
     background-color: black;
     border-radius: 15px;
@@ -31,11 +31,18 @@ h3 {
     padding: 10px;
 }
 
-input {
+.auth_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.username_pw_input {
     width: 300px;
     border-radius: 15px;
     margin: 10px 0px;
-    padding: 3px;
+    padding: 5px;
+    align-self: center;
 }
 
 .auth_btn {
@@ -43,4 +50,6 @@ input {
     border-radius: 15px;
     width: 135px;
     margin: 5px 0px 5px 0px;
+    align-self: center;
+    padding: 5px;
 }

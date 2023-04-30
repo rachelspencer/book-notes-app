@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { createBook } from '../api';
 import AuthContext from "../context/authContext";
+import './BookShow.css';
 
 function BookShow({isInLibrary, book}) {
     const { userId } = useContext(AuthContext);
@@ -16,7 +17,7 @@ function BookShow({isInLibrary, book}) {
 
     return (
         <div>
-            <img src={coverUrl.replace('http', 'https')} alt="book cover" />
+            <img className="image" src={coverUrl.replace('http', 'https')} alt="book cover" />
             
             {!isInLibrary && (
                 <button className="tbd" onClick={handleClick}>
