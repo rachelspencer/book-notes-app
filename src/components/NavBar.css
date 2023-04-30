@@ -1,0 +1,27 @@
+.nav_container {
+    transform: rotate(90deg);
+    position: absolute;
+    left: -46px;
+}
+
+.nav_style {
+    display: flex;
+    position: relative;
+}
+
+.link_text_style {
+    margin-top: 40px;
+    position: absolute;
+    width: 200px;
+    list-style-type: none;
+}
+
+#your-library {
+    left: 30px;
+    bottom: 54px;
+}
+
+#add-new {
+    left: 147px;
+    bottom: 54px;
+}
