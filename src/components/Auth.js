@@ -72,12 +72,12 @@ function Auth() {
                         type="text"
                         onChange={handlePassword}
                     />
-                    <button className="tbd">
+                    <button className="auth_btn">
                         {register ? "Register" : "Login"}
                     </button>
                 </form>
                 <button
-                    className="tbd" onClick={handleClick}>Need to {register? "Login" : "Register"}?</button>
+                    className="auth_btn" onClick={handleClick}>Need to {register? "Login" : "Register"}?</button>
             </div>
         </main>
     );

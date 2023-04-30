@@ -1,0 +1,18 @@
+.signout_container {
+    position: relative;
+    padding: 20px
+}
+.signout_btn {
+    font-family: 'Work Sans', sans-serif;
+    border-radius: 15px;
+    width: 135px;
+    margin: 50px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    
+}
