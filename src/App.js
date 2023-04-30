@@ -7,12 +7,13 @@ import MainDisplay from "./pages/MainDisplay";
 import NavBar from './components/NavBar';
 import MainDisplayHeader from './components/MainDisplayHeader';
 import AddNewBook from './pages/AddNewBook';
+import './App.css';
 
 function App() {
     const authCtx = useContext(AuthContext);
 
     return (
-        <div>
+        <div className='app_container'>
             {authCtx.token && <MainDisplayHeader/>}
             {authCtx.token && <NavBar/>}
             <Routes>

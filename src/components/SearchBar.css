@@ -2,26 +2,29 @@
     font-family: 'Open Sans', regular;
 } */
 
-.search-bar {
-    /* border: 1px solid lightgray; */
-    /* border-radius: 30px; */
-    padding: 10px;
-}
+/* .search_bar_containter {
+    
+} */
 
 .search-bar form {
     display: flex;
     flex-direction: row;
-    align-items: end;
+    justify-content: flex-end;
+    margin: 20px;
+   
 }
 
 .search_bar_input {
     border-radius: 30px;
-    flex: 2;
+    margin-right: 0;
 }
 
 .search_bar_btn {
     border-radius: 30px;
-    flex: 1;
+    flex: 3;
+    margin-right: 10px;
+    width: 135px;
+    margin: 5px 0px 5px 0px;
 }
 
 

@@ -4,7 +4,7 @@ import './MainDisplayHeader.css'
 
 function MainDisplayHeader() {
     return (
-        <div>
+        <div className="header_container">
             <h2>BookNotes</h2>
             <SignOut/>
         </div>
