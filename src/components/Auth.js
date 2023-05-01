@@ -45,13 +45,12 @@ function Auth() {
             console.log('FE Error', error);
             setUsername('');
             setPassword('');
-            // setShowModal(true);
             }
         console.log('response auth FE', response);
         authCtx.login(response.data.token, response.data.exp, response.data.userId)
         };
     
-    // create a form to capture user inputs
+    // capture user inputs through form
     return (
         <main>
             <h1>BookNotes</h1>
@@ -69,7 +68,7 @@ function Auth() {
                         className="username_pw_input"
                         placeholder="Password"
                         value={password}
-                        type="text"
+                        type="password"
                         onChange={handlePassword}
                     />
                     <button className="auth_btn">

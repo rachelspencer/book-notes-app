@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
 import { searchBookCovers } from '../api';
+import './AddNewBook.css';
 
 const AddNewBook = () => {
     const [book, setBook ] = useState('');

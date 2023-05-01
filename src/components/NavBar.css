@@ -25,3 +25,19 @@
     left: 147px;
     bottom: 54px;
 }
+
+#navlink {
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.pending {
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}

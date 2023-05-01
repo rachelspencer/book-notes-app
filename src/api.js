@@ -3,7 +3,6 @@ import axios from 'axios';
 const baseUrl = "http://localhost:3001"
 
 // books api
-
 export const searchBookCovers = async (term) => {
   try {
     const response = await axios.get('https://immense-brook-25888.herokuapp.com/bookcover', {
@@ -83,22 +82,3 @@ export const getBooksForUser = async (userId) => {
 //     throw error;
 //   }
 // };
-
-// export default searchBookCovers;
-
-// Unfinished, attempt to hit BE endpoints
-// const url = "http://localhost:3001"
-
-// const searchBookCovers = async (term) => {
-//   try {
-//     const response = await axios.get(`${url}/books/${term}`)
-//     console.log(response.data)
-//     return response.data
-//   }
-//   catch (error) {
-//     console.log('FE res /books', error);
-//     };
-
-// };
-
-// export default searchBookCovers;
