@@ -1,3 +1,23 @@
+.library_placeholder {
+    display: flex;
+    justify-content: center;
+}
+
+.no_books_placeholder {
+  
+    height: 300px;
+    border-radius: 17px;
+}
+
+.placeholder-text {
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-size: 30px;
+    position: absolute;
+    top: 89%;
+}
+
 .book_list_container {
     display: flex;
     flex-direction: row;
