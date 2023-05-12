@@ -72,7 +72,7 @@ function Auth() {
                         className="username_pw_input"
                         placeholder="Password"
                         value={password}
-                        type="text"
+                        type="password"
                         onChange={handlePassword}
                     />
                     {pwSuggestions.length > 0 && (
