@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from 'axios';
 import AuthContext from "../context/authContext";
+import zxcvbn from 'zxcvbn';
 import './Auth.css';
 
 function Auth() {
@@ -9,6 +10,7 @@ function Auth() {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ register, setRegister ] = useState(true);
+    const [ pwSuggestions, setPwSuggestions ] = useState([]);
 
     const handleUsername = (event) => {
         setUsername(event.target.value)
@@ -17,7 +19,9 @@ function Auth() {
 
     const handlePassword = (event) => {
         setPassword(event.target.value);
-        console.log(password)
+        const evaluation = zxcvbn(password)
+        console.log("Evaluation:", evaluation)
+        setPwSuggestions(evaluation.feedback.suggestions)
     };
 
     const handleClick = (event) => {
@@ -68,9 +72,18 @@ function Auth() {
                         className="username_pw_input"
                         placeholder="Password"
                         value={password}
-                        type="password"
+                        type="text"
                         onChange={handlePassword}
                     />
+                    {pwSuggestions.length > 0 && (
+                        <ul>
+                            {pwSuggestions.map((suggestion, index) => (
+                                <li className="pw_suggestions" key={index}>
+                                    {suggestion}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                     <button className="auth_btn">
                         {register ? "Register" : "Login"}
                     </button>
