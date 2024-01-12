@@ -11,7 +11,12 @@ app.use(cors());
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-
+//Connect to MongoDB 
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/book_notes", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 
 
