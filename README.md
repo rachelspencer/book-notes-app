@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# BookNotes 📖
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## An app that digitalizes your home library 💻📚
 
-## Available Scripts
+Do you own a lot of books at home? Ever wonder if you already have a particular book when you're at the book shop? Well fear no longer, BookNotes is here to solve your issue! This app allows you to search books by author or title. When a match is found you can add the book to your library. Of course a pretty thumbnail picture will aid in displaying your collection in the Library section of the app. Great news right? Now you will stop doubling up on books... which means your stocking stuffer inventory will be depleted, but you can always fall back on the classic sock option.
 
-In the project directory, you can run:
+## Watch my demo video!
 
-### `npm start`
+*Lights camera aaaand ACTION!*
+![Youtube demo](https://github.com/rachelspencer/book-notes-app/assets/111473039/a428588a-1aaa-4d6b-9c2c-c3bf50f30f65)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How it works
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Register or login
 
-### `npm test`
+    Fill the fields in, you know the drill.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Signin](https://github.com/rachelspencer/book-notes-app/assets/111473039/174258ff-9d75-4650-ad2d-05e50647eace)
 
-### `npm run build`
+2. Select the "Add New Book" tab
+   
+    Begin the process of digitalizing your collection of books. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Add new book](https://github.com/rachelspencer/book-notes-app/assets/111473039/b73cc3ed-5b5c-4372-9ba7-9e4848643a23)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Searching and Adding
+   
+    Enter a book title or authors name into the search bar and click search. Warning, you may get a similar rush to when you run your fingers over the        spins of books on a shelf at your local book shop. It would be rude of me not to disclose this.
+![Search Book Title](https://github.com/rachelspencer/book-notes-app/assets/111473039/f9a4d5e6-9e5e-4ba4-9d89-f78c360580b3)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 4. Select that book!
 
-### `npm run eject`
+    Wowza! There it is! Go ahead an click it, it'll get added to your library. I know, this is cool right. You're brother will thank me later when
+    he realizes how close he came to having Gone with the Wind in his Christmas stocking. You'll never accidently buy this book twice becuase now
+    you can just check your app when you're out book shopping.
+![Select to add to librbary](https://github.com/rachelspencer/book-notes-app/assets/111473039/2cbbb4d5-7549-4e31-b437-3a4368ed995e)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. View your library
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   If you head over to the "Your Library" tab and click it, you'll be able to see all of your books.
+![Example of many books ](https://github.com/rachelspencer/book-notes-app/assets/111473039/afa0a2f2-c746-4ad4-9178-73e9e9a7eaac)
