@@ -39,3 +39,26 @@ Do you own a lot of books at home? Ever wonder if you already have a particular 
 
    If you head over to the "Your Library" tab and click it, you'll be able to see all of your books.
 ![Example of many books ](https://github.com/rachelspencer/book-notes-app/assets/111473039/afa0a2f2-c746-4ad4-9178-73e9e9a7eaac)
+
+## Set up the project
+
+### Install Node and NPM
+
+`npm` is distributed with Node.js, which means that when you download Node.js, you automatically get `npm` installed on your computer. You can install Node by [downloading it from the Node.js website](https://nodejs.org/en/) or using a Node version manager like [nvm](https://github.com/nvm-sh/nvm) on a macOS or Linux device or [nvm-windows](https://github.com/coreybutler/nvm-windows) on a Windows device.
+
+### Clone the project locally
+
+1. Click on the "Code" tab on this repo's "Code" page.
+2. Click the green "Code" button to reveal a "Clone" popup.
+3. The "HTTPS" tab should be automatically selected. If not, click "HTTPS."
+4. Click the copy button to copy the url of this repository to your clipboard.
+   
+![Cloning repo](https://github.com/rachelspencer/book-notes-app/assets/111473039/c880ae3d-2426-4dde-85b1-c6330734177a)
+
+6. Open your terminal and `cd` to the directory where you want this project to live.
+   
+![mkdirTerminalDemo](https://github.com/rachelspencer/book-notes-app/assets/111473039/b8c9ac95-09a8-4971-8cdd-79194fa85f20)
+
+7. Once you have successfully navigated to the directory, run `git clone` and paste the the web URL right after (copied to your clipboard in step four).
+   
+![CloneRepo](https://github.com/rachelspencer/book-notes-app/assets/111473039/e9da32d2-e7e7-469f-8ad2-22d847538d73)
