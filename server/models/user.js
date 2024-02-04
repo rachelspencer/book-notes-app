@@ -9,12 +9,12 @@ module.exports = {
     // Defines a new model for a 'User' objext. Takes 2 arguments: name of the model ('user') and an object containing the column definitions
     User: sequelize.define('user', {
         // Defines 'user' table with three columns: id, username, hashPass and its contraints 
-        // id: {
-        //     type: DataTypes.INTEGER,
-        //     autoIncrement: true,
-        //     allowNull: false,
-        //     primaryKey: true
-        // },
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true
+        },
         username: DataTypes.STRING,
         hashedPass:DataTypes.STRING
     })

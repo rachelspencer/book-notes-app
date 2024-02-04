@@ -1,14 +1,13 @@
+// code to use MongoDB
 require('dotenv').config({ path: '../.env' });
-const express = require('express');
+const express = require("express");
 const cors = require('cors');
 const { sequelize } = require('./util/database');
-// no longer using ... const seedDatabase = require('./util/seedData');
 const { User } = require('./models/User');
 const { Book } = require('./models/Book');
 
-
-const PORT = process.env.PORT;
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());

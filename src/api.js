@@ -5,7 +5,7 @@ const baseUrl = "http://localhost:3001"
 // books api
 export const searchBookCovers = async (term) => {
   try {
-    const response = await axios.get('https://immense-brook-25888.herokuapp.com/bookcover', {
+    const response = await axios.get('https://bookcover-api-v2-c41a38b660b9.herokuapp.com/bookcover', {
       params: {
         book_title: term,
         author_name: '',
