@@ -10,7 +10,7 @@ function BookList({ isLibrary, books = [] }) {
                 alt="No books to display"
                 className="no_books_placeholder"
                 />
-                <div class="placeholder-text">No books in library, get adding!</div>
+                <div className="placeholder-text">No books in library, get adding!</div>
           </div>
         )
     };
