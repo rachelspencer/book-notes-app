@@ -1,20 +1,35 @@
 .library_placeholder {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .no_books_placeholder {
-    height: 300px;
+    height: 150px;
     border-radius: 17px;
+}
+
+@media screen and (min-width: 640px) {
+    .no_books_placeholder {
+        height: 300px;
+    }
 }
 
 .placeholder-text {
     font-family: 'Work Sans', sans-serif;
-    color: white;
-    text-shadow: 2px 2px 4px black;
+    color: black;
     font-size: 30px;
-    position: absolute;
     top: 89%;
+}
+
+@media screen and (min-width: 640px) {
+    .placeholder-text {
+        font-family: 'Work Sans', sans-serif;
+        color: black;
+        font-size: 30px;
+        position: absolute;
+        top: 89%;
+    }
 }
 
 .book_list_container {
