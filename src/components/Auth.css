@@ -1,17 +1,25 @@
-/* main {
-    background-color: white;
-} */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 h1 {
     font-family: 'Abril Fatface';
-    font-size: 68px;
+    font-size: 60px;
     text-align: center;
     margin-bottom: 5px;
 }
 
+@media screen and (min-width: 640px) {
+    h1 {
+        font-size: 68px;
+    }
+}
+
 .landing_page_tag {
     font-family: 'Work Sans', sans-serif;
-    font-size: 17px;
+    font-size: 25px;
     text-align: center;
     margin-top: 5px;
     color: red;
@@ -22,12 +30,18 @@ h1 {
 }
 
 .login {
-    width: 450px;
+    width: 280px;
     margin: 0 auto;
     background-color: black;
     border-radius: 15px;
     text-align: center;
     padding: 10px;
+}
+
+@media screen and (min-width: 640px) {
+    .login {
+        width: 450px;
+    }
 }
 
 .auth_form {
@@ -37,11 +51,17 @@ h1 {
 }
 
 .username_pw_input {
-    width: 300px;
+    width: 260px;
     border-radius: 15px;
     margin: 10px 0px;
     padding: 5px;
     align-self: center;
+}
+
+@media screen and (min-width: 640px) {
+    .username_pw_input {
+        width: 300px;
+    }
 }
 
 .pw_suggestions {
