@@ -14,7 +14,7 @@ const AddNewBook = () => {
     }
 
     return (
-        <div>
+        <div className='add_new_container'>
             <h3 className='add_new_book_heading'>Add new book</h3>
             <SearchBar onSubmit={handleSubmit}/>
             <BookList isLibrary={false} books={[book]}/>
