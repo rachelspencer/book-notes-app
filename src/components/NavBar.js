@@ -4,8 +4,8 @@ import './NavBar.css';
 
 function NavBar() {
     return (
-        <div className="nav_container">
-            <nav>
+        <div>
+            <nav className="nav_container">
                 <ul className="nav_style">
                     <li id="your-library" className="link_text_style">
                         <NavLink 
@@ -27,7 +27,7 @@ function NavBar() {
                             ({ isActive, isPending }) =>  isPending ? "pending" : isActive ? "active" : ""
                         }
                     >
-                            Add New Book</NavLink>
+                            Add Book</NavLink>
                     </li>
                 </ul>
             </nav>
