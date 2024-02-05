@@ -1,3 +1,13 @@
 .app_container {
-    padding: 20px 80px;
+    padding: 20px 30px;
+}
+
+@media screen and (min-width: 640px) {
+    .app_container {
+        padding: 20px 80px;;
+    }
+}
+
+body {
+    background-color:bisque;
 }

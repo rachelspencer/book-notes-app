@@ -20,7 +20,7 @@ function BookShow({isInLibrary, book}) {
             <img className="image" src={coverUrl.replace('http', 'https')} alt="book cover" />
             
             {!isInLibrary && (
-                <button className="tbd" onClick={handleClick}>
+                <button className="add-book-btn" onClick={handleClick}>
                     Add to Library
                 </button>
             )}

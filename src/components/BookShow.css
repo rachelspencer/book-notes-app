@@ -1,5 +1,24 @@
 .image {
-    width: 170px;
+    width: 230px;
     height: auto;
-    margin: 10px;
+    margin-top: 38px;
+    margin-left: 38px;
+    margin-right: 38px;
+
+}
+
+@media screen and (min-width: 640px) {
+    .image {
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 190px;
+    }
+}
+
+.add-book-btn {
+    border-radius: 30px;
+    width: 120px;
+    border-width: thin;
+    font-family: 'Work Sans', sans-serif;
 }

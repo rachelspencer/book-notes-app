@@ -1,10 +1,9 @@
 .signout_btn {
     font-family: 'Work Sans', sans-serif;
     border-radius: 15px;
-    width: 135px;
     background: none;
     border: none;
     color: #000;
     cursor: pointer;
-    font-size: 15px;
+   
 }
