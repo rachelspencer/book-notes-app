@@ -42,7 +42,7 @@ Do you own a lot of books at home? Ever wonder if you already have a particular 
 
 ## Set up the project
 
-### Install Node and NPM
+### Installation Instructions
 
 `npm` is distributed with Node.js, which means that when you download Node.js, you automatically get `npm` installed on your computer. You can install Node by [downloading it from the Node.js website](https://nodejs.org/en/) or using a Node version manager like [nvm](https://github.com/nvm-sh/nvm) on a macOS or Linux device or [nvm-windows](https://github.com/coreybutler/nvm-windows) on a Windows device.
 
@@ -62,3 +62,28 @@ Do you own a lot of books at home? Ever wonder if you already have a particular 
 7. Once you have successfully navigated to the directory, run `git clone` and paste the the web URL right after (copied to your clipboard in step four).
    
 ![CloneRepo](https://github.com/rachelspencer/book-notes-app/assets/111473039/e9da32d2-e7e7-469f-8ad2-22d847538d73)
+
+8. In the terminal, run `ls` to determine you can see all the files associated with this directory. Once you are ready to open the project run `code .`.
+
+![OpenInVSCode](https://github.com/rachelspencer/book-notes-app/assets/111473039/cc473c67-2fcc-47c1-93f1-a4ebf0bbe1bd)
+
+## Usage Guidelines
+
+In the root of the directory you will need to run `npm i` in the terminal to install the projects dependencies. In the root you can also run `npm start` to run the server locally. Navigate to the server directory, the run `nodemon index.js` to start the backend. You can then open the project locally. 
+
+### Database
+
+There are models in the backend of this project that use sequelize. To avoid refactoring code look for any relational database like Oracle, PostgreSQL, MySQL or SQLite. You will have to set up a database with one of these providers and connect it to the app by adding environmental variables to a `.env' file. 
+
+### Environmental variables 
+
+You will need to create a .env file in the root of the Directory and update some environment variables. 
+
+1. `PORT=yourport` variable processed in the index.js file in the server directory.
+
+2. `SECRET=somesecretstring` go to any website that generates a secret and paste a value in. This will be used in the auth.js file to assist in generating tokens when registration / login functions are called.
+   
+4. `DATABASE_URL` import a PostgreSQL connection URL usually formatted like postgresql://localhost/yourport/yourdatabasename
+   
+![env variables](https://github.com/rachelspencer/book-notes-app/assets/111473039/c44ae741-9c52-4841-8894-686d991043b5)
+
