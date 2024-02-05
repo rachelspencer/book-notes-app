@@ -16,7 +16,7 @@ function BookShow({isInLibrary, book}) {
     };
 
     return (
-        <div>
+        <div className="book-show">
             <img className="image" src={coverUrl.replace('http', 'https')} alt="book cover" />
             
             {!isInLibrary && (

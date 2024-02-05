@@ -1,3 +1,8 @@
+.book-show {
+    display: flex;
+    flex-direction: column;
+}
+
 .image {
     width: 230px;
     height: auto;
@@ -21,4 +26,6 @@
     width: 120px;
     border-width: thin;
     font-family: 'Work Sans', sans-serif;
+    align-self: center;
+    margin: 15px 0px;
 }
