@@ -17,13 +17,25 @@
 }
 
 #your-library {
-    left: 30px;
-    bottom: 54px;
+    left: 100px;
+    bottom: 35px;
+}
+
+@media screen and (min-width: 640px) {
+    #your-library {
+        bottom: 54px;
+    }
 }
 
 #add-new {
-    left: 147px;
-    bottom: 54px;
+    left: 270px;
+    bottom: 35px;
+}
+
+@media screen and (min-width: 640px) {
+    #add-new {
+        bottom: 54px;
+    }
 }
 
 #navlink {
@@ -39,5 +51,5 @@
 .active {
     color: red;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
 }
