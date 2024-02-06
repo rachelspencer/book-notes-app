@@ -1,9 +1,16 @@
+import ReactDom from 'react-dom';
+import './Modal.css';
+
 function Modal({ onClose, message }) {
-    return (
+    return ReactDom.createPortal(
         <div>
-            <p>{message}</p>
-            <button onClick={onClose}>Close</button>
-        </div>
+        <div className="modal_Background"></div>
+            <div className="modal_Box">
+                <p>{message}</p>
+                <button onClick={onClose}>Close</button>
+            </div>  
+        </div>,
+        document.querySelector('.modal-container')
     );
 };
 

@@ -1,0 +1,12 @@
+.modal_Background {
+    position: absolute;
+    inset: 0px;
+    background-color: lightgray;
+}
+
+.modal_Box {
+    position: absolute;
+    inset: 250px;
+    background-color: white;
+    padding: 10px;
+}
