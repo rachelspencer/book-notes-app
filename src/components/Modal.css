@@ -1,0 +1,36 @@
+.modal_background {
+    position: fixed;
+    inset: 0px;
+    background-color: lightgray;
+}
+
+.modal_box {
+    position: fixed;
+    inset: 250px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.modal_action_btn {
+    justify-content: center; border-radius: 30px;
+}
+
+.modal_action_btn button {
+    border-radius: 30px;
+    margin: 5px;
+    width: 180px;
+    height: 50px;
+    border-width: thin;
+    font-family: 'Work Sans', sans-serif;
+    align-self: center;
+    background-color: rgba(255, 0, 0, .2);
+} 
