@@ -24,6 +24,7 @@ function BookShow({isInLibrary, book}) {
     const actionBar = (
         <div>
             <button onClick={closeModal}>Go to Library</button>
+            <button onClick={closeModal}>Add More books</button>
         </div>
     );
 
