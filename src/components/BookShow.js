@@ -21,6 +21,16 @@ function BookShow({isInLibrary, book}) {
         setShowModal(false);
     };
 
+    const actionBar = (
+        <div>
+            <button onClick={closeModal}>Go to Library</button>
+        </div>
+    );
+
+    const modal = <Modal onClose={closeModal} actionBar={actionBar}>
+        <p>Book has been added to your library!</p>
+    </ Modal>
+
     return (
         <div className="book-show">
             <img className="image" src={coverUrl.replace('http', 'https')} alt="book cover" />
@@ -30,9 +40,7 @@ function BookShow({isInLibrary, book}) {
                     <button className="add-book-btn" onClick={handleClick}>
                         Add to Library
                     </button>
-                    {showModal && (
-                        <Modal onClose={closeModal} message="Book has been added to your library!"/>
-                    )}
+                    {showModal && modal}
                 </>
             )}
         </div>

@@ -1,12 +1,26 @@
-.modal_Background {
+.modal_background {
     position: absolute;
     inset: 0px;
     background-color: lightgray;
 }
 
-.modal_Box {
+.modal_box {
     position: absolute;
     inset: 250px;
     background-color: white;
     padding: 10px;
+    border-radius: 10px;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.modal_action_btn {
+    display: flex;
+    justify-content: center;
 }
