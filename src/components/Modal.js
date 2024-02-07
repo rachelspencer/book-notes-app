@@ -1,7 +1,18 @@
 import ReactDom from 'react-dom';
+import { useEffect } from 'react';
 import './Modal.css';
 
 function Modal({ children, actionBar }) {
+    useEffect(() => {
+        // add class style when modal first renders
+        document.body.classList.add('overflow-hidden');
+
+        // remove class style when modal closes
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, []);
+
     return ReactDom.createPortal(
         <div>
         <div className="modal_background"></div>
