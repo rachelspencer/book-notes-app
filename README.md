@@ -46,6 +46,11 @@ Do you own a lot of books at home? Ever wonder if you already have a particular 
 
 `npm` is distributed with Node.js, which means that when you download Node.js, you automatically get `npm` installed on your computer. You can install Node by [downloading it from the Node.js website](https://nodejs.org/en/) or using a Node version manager like [nvm](https://github.com/nvm-sh/nvm) on a macOS or Linux device or [nvm-windows](https://github.com/coreybutler/nvm-windows) on a Windows device.
 
+You can check if you have Node.js already installed by running `node -v` in your terminal. You will need it for this project to run, so don't skip this!
+
+You will also need to make sure you have Visual Studios installed, check by running `code --version`. If you don't have it [download it from VS Code](https://code.visualstudio.com/download). If you use another development 
+environment, you will beed to alter setp 7. to open the cloned repo. 
+
 ### Clone the project locally
 
 1. Click on the "Code" tab on this repo's "Code" page.
