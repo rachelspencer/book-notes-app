@@ -55,15 +55,15 @@ Do you own a lot of books at home? Ever wonder if you already have a particular 
    
 ![Cloning repo](https://github.com/rachelspencer/book-notes-app/assets/111473039/c880ae3d-2426-4dde-85b1-c6330734177a)
 
-6. Open your terminal and `cd` to the directory where you want this project to live.
+5. Open your terminal and `cd` to the directory where you want this project to live.
    
 ![mkdirTerminalDemo](https://github.com/rachelspencer/book-notes-app/assets/111473039/b8c9ac95-09a8-4971-8cdd-79194fa85f20)
 
-7. Once you have successfully navigated to the directory, run `git clone` and paste the the web URL right after (copied to your clipboard in step four).
+6. Once you have successfully navigated to the directory, run `git clone` and paste the the web URL right after (copied to your clipboard in step four).
    
 ![CloneRepo](https://github.com/rachelspencer/book-notes-app/assets/111473039/e9da32d2-e7e7-469f-8ad2-22d847538d73)
 
-8. In the terminal, run `ls` to determine you can see all the files associated with this directory. Once you are ready to open the project run `code .`.
+7. In the terminal, run `ls` to determine you can see all the files associated with this directory. Once you are ready to open the project run `code .`.
 
 ![OpenInVSCode](https://github.com/rachelspencer/book-notes-app/assets/111473039/cc473c67-2fcc-47c1-93f1-a4ebf0bbe1bd)
 
