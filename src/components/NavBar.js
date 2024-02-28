@@ -1,11 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import './NavBar.css';
+import SignOut from "./SignOut";
 
 function NavBar() {
     return (
-        <div>
-            <nav className="nav_container">
+        <div className="nav_container">
+            <SignOut/>
+            <nav>
                 <ul className="nav_style">
                     <li id="your-library" className="link_text_style">
                         <NavLink 

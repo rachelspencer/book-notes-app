@@ -14,8 +14,8 @@ function App() {
 
     return (
         <div className='app_container'>
-            {authCtx.token && <MainDisplayHeader/>}
             {authCtx.token && <NavBar/>}
+            {authCtx.token && <MainDisplayHeader/>}
             <Routes>
                 <Route exact path="/auth" element={!authCtx.token ? <Login/> : <Navigate to='/'/>}/>
                 <Route path="/" element={authCtx.token ? <MainDisplay/> : <Navigate to='/auth'/>}/>
