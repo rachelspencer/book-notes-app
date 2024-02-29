@@ -18,8 +18,8 @@ function App() {
             {authCtx.token && <MainDisplayHeader/>}
             <Routes>
                 <Route exact path="/auth" element={!authCtx.token ? <Login/> : <Navigate to='/'/>}/>
-                <Route path="/" element={authCtx.token ? <MainDisplay/> : <Navigate to='/auth'/>}/>
-                <Route path="/add" element={<AddNewBook/>}/>
+                <Route exact path="/" element={authCtx.token ? <MainDisplay/> : <Navigate to='/auth'/>}/>
+                <Route exact path="/add" element={<AddNewBook/>}/>
             </Routes>
         </div>
     );

@@ -21,6 +21,7 @@ function NavBar() {
                     <li id="add-new" className="link_text_style">
                         <NavLink 
                         id="navlink-add-new"
+                        exact="true"
                         to="/add" 
                     >
                             Add Book</NavLink>
