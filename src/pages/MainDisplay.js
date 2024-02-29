@@ -8,11 +8,15 @@ import { getBooksForUser } from '../api';
 function MainDisplay() {
     const { userId } = useContext(AuthContext);
     const [ books, setBooks ] = useState([]);
-
-    console.log("userId from context", userId)
+   
     const fetchBooks = async (userId) => {
-        const result = await getBooksForUser(userId)
-        setBooks(result.data);
+        try {
+            const result = await getBooksForUser(userId);
+            setBooks(result.data);
+            console.log("result.data", result.data);
+        } catch (error) {
+            console.error("Error fetching books:", error);
+        }
     };
     
     useEffect(() => {
@@ -22,8 +26,13 @@ function MainDisplay() {
     return (
         <div>
             <h3 className='add_new_book_heading'>Your Library</h3>
-            <SearchBar />
-            <BookList isLibrary books={books}/>
+            {!books.length > 0 && <p>There are no books in your Library</p>}
+            {books.length > 0 && (
+                <>
+                <SearchBar />
+                <BookList isLibrary books={books}/>
+                </>
+            )}
         </div>
     );
 };
