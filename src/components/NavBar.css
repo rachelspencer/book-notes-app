@@ -26,51 +26,27 @@
     }
 }
 
-a:visited {
-    color: #000 !important; 
-}
-
-.link_text_style:hover {
-    color: red;
-}
-
 @media screen and (min-width: 640px) {
     .link_text_style  {
         font-family: 'Abril Fatface', regular;
         font-size: 25px;
         list-style-type: none;
-        /* color: black; */
     }
 }
 
+a:visited {
+    color: #000 !important; 
+}
 
+a.active {
+        color: white !important; 
+        text-decoration: underline;
+}
 
-/* #your-library {
-    left: 100px;
-    bottom: 35px;
-} */
-
-
-
-/* #add-new {
-    left: 270px;
-    bottom: 35px;
-} */
-
-/* @media screen and (min-width: 640px) {
-    #add-new {
-        bottom: 54px;
-    }
-} */
-
-#navlink {
+#navlink-your-library, #navlink-add-new {
     text-decoration: none;
 }
 
-.pending {
-    text-decoration: none !important;
-}
-
-.active {
-    text-decoration: none !important; 
+#navlink-your-library.active, #navlink-add-new.active {
+    text-decoration: underline;
 }
