@@ -21,6 +21,7 @@ function MainDisplay() {
 
     return (
         <div>
+            <h3 className='add_new_book_heading'>Your Library</h3>
             <SearchBar />
             <BookList isLibrary books={books}/>
         </div>
