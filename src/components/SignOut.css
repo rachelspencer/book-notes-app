@@ -12,3 +12,7 @@
     color: #000;
     cursor: pointer;
 }
+
+.signout_btn:active {
+    background: white;
+}

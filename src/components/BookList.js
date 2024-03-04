@@ -27,11 +27,3 @@ function BookList({ isLibrary, books = [] }) {
 };
 
 export default BookList;
-
-// const BookList = ({ books = [] }) => books.length && (
-//     <div className="tbd">
-//         {books.map((book, i) => {
-//             return <BookShow key={i} book={book}/>
-//         })}
-//     </div>
-// );

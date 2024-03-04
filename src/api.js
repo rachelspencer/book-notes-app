@@ -48,7 +48,7 @@ export const createBook = async (data) => {
 export const getBooksForUser = async (userId) => {
   try {
     const parsedUserId = parseInt(userId);
-    console.log("data in getbooksforusers", typeof parsedUserId)
+    // console.log("data in getbooksforusers", typeof parsedUserId)
     const response = await axios.get(`${baseUrl}/books`, {
       params: {
         userId: parsedUserId,
