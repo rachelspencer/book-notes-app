@@ -5,6 +5,7 @@
 .add_new_book_heading {
     font-family: 'Abril Fatface';
     margin: 0px;
+    color: #333333;
 }
 
 @media screen and (min-width: 640px) {
