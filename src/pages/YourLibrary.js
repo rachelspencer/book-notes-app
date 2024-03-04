@@ -3,9 +3,10 @@ import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
 import AuthContext from "../context/authContext";
 import { getBooksForUser } from '../api';
+import './YourLibrary.css';
 
 
-function MainDisplay() {
+function YourLibrary() {
     const { userId } = useContext(AuthContext);
     const [ books, setBooks ] = useState([]);
    
@@ -24,8 +25,8 @@ function MainDisplay() {
     }, [userId]);
 
     return (
-        <div>
-            <h3 className='add_new_book_heading'>Your Library</h3>
+        <div className='display-container'>
+            <h3>Your Library</h3>
             {!books.length > 0 && <p>There are no books in your Library</p>}
             {books.length > 0 && (
                 <>
@@ -37,4 +38,4 @@ function MainDisplay() {
     );
 };
 
-export default MainDisplay;
+export default YourLibrary;
