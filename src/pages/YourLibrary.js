@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Link } from "react-router-dom";
 import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
 import AuthContext from "../context/authContext";
@@ -27,7 +28,11 @@ function YourLibrary() {
     return (
         <div className='display-container'>
             <h3>Your Library</h3>
-            {!books.length > 0 && <p>There are no books in your Library</p>}
+            {!books.length > 0 && 
+                <div>
+                    <p>There are no books in your Library, click the link below to add some.</p>
+                    <Link to="/add">Add book</Link>
+                </div>}
             {books.length > 0 && (
                 <>
                 <SearchBar />
