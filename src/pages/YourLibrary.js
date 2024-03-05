@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
 import AuthContext from "../context/authContext";
 import { getBooksForUser } from '../api';
+import BaseButton from '../components/BaseButton'
 import './YourLibrary.css';
 
 
@@ -31,7 +32,7 @@ function YourLibrary() {
             {!books.length > 0 && 
                 <div>
                     <p>There are no books in your Library, click the link below to add some.</p>
-                    <Link to="/add">Add book</Link>
+                    <BaseButton as={Link} to="/add">Add Book</BaseButton>
                 </div>}
             {books.length > 0 && (
                 <>
