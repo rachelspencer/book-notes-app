@@ -3,7 +3,7 @@ import { useState } from "react";
 import './SearchBar.css';
 // import SearchContext from "../context/searchContext";
 
-const SearchBar = ({onSubmit}) => {
+const SearchBar = ({onSubmit, labelText}) => {
     const [ term, setTerm ] = useState('');
 
     const handleChange = (event) => {
@@ -20,8 +20,9 @@ const SearchBar = ({onSubmit}) => {
     
     return (
         <div className='search_bar_containter'>
+            <label htmlFor="searchBar">{labelText}</label>
             <form className="searchbar_form" onSubmit={handleFormSubmit}>
-                <input className="search_bar_input" type="text" value={term} onChange={handleChange} placeholder="Book name"></input>
+                <input id="searchBar" className="search_bar_input" type="text" value={term} onChange={handleChange} ></input>
                 <button className="search_bar_btn" type="submit">Search</button>
             </form>
         </div>
