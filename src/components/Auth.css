@@ -2,6 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 100px;
 }
 
 h1 {
@@ -26,14 +27,10 @@ h1 {
     color: #A52A2A;
 }
 
-::placeholder {
-    font-family: 'Work Sans', sans-serif;
-}
-
 .login {
     width: 280px;
     margin: 0 auto;
-    background-color: black;
+    background-color: #A52A2A;
     border-radius: 15px;
     text-align: center;
     padding: 10px;
@@ -49,6 +46,13 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+label {
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    justify-content: left;
+
 }
 
 .username_pw_input {

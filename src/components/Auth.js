@@ -61,18 +61,20 @@ function Auth() {
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
                 <form className ="auth_form" onSubmit={handleSubmit}>
+                    <label htmlFor="username">Username</label>
                     <input
                         className="username_pw_input"
-                        placeholder="Username"
                         value={username}
                         type="text"
+                        id="username"
                         onChange={handleUsername}
                     />
+                    <label htmlFor="password">Password</label>
                     <input
                         className="username_pw_input"
-                        placeholder="Password"
                         value={password}
                         type="password"
+                        id="password"
                         onChange={handlePassword}
                     />
                     {pwSuggestions.length > 0 && (
