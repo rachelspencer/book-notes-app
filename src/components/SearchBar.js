@@ -20,7 +20,7 @@ const SearchBar = ({onSubmit, labelText}) => {
     
     return (
         <div className='search_bar_containter'>
-            <label htmlFor="searchBar">{labelText}</label>
+            <label className="search_bar_label" htmlFor="searchBar">{labelText}</label>
             <form className="searchbar_form" onSubmit={handleFormSubmit}>
                 <input id="searchBar" className="search_bar_input" type="text" value={term} onChange={handleChange} ></input>
                 <button className="search_bar_btn" type="submit">Search</button>

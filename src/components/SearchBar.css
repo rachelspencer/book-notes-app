@@ -7,6 +7,10 @@
     flex-direction: row;
 }
 
+.search_bar_label {
+    font-family: 'Work Sans', sans-serif;
+}
+
 .search_bar_input {
     border-radius: 30px;
     margin-right: 10px;
@@ -21,5 +25,3 @@
     border-width: thin;
     font-family: 'Work Sans', sans-serif;
 }
-
-
