@@ -12,7 +12,7 @@ function SignOut() {
     }
     return (
         <div className="signout-contatiner">
-            <Link exact to="/auth">
+            <Link to="/auth">
                 <button className="signout_btn" onClick={handleClick}>Sign Out</button>
             </Link>
         </div>
