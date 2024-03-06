@@ -54,7 +54,7 @@ h1 {
     justify-content: space-around;
 }
 
-label {
+.auth_label {
     font-family: 'Work Sans', sans-serif;
     color: white;
     justify-content: left;

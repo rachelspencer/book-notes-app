@@ -61,7 +61,7 @@ function Auth() {
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
                 <form className ="auth_form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username</label>
+                    <label className="auth_label" htmlFor="username">Username</label>
                     <input
                         className="username_pw_input"
                         value={username}
@@ -69,7 +69,7 @@ function Auth() {
                         id="username"
                         onChange={handleUsername}
                     />
-                    <label htmlFor="password">Password</label>
+                    <label className="auth_label" htmlFor="password">Password</label>
                     <input
                         className="username_pw_input"
                         value={password}
