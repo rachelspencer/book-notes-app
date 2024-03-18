@@ -4,7 +4,6 @@ import SearchBar from '../components/SearchBar';
 import BookList from '../components/BookList';
 import AuthContext from "../context/authContext";
 import { getBooksForUser } from '../api';
-import BaseButton from '../components/BaseButton'
 import './YourLibrary.css';
 
 
@@ -31,8 +30,9 @@ function YourLibrary() {
             <h3>Your Library</h3>
             {!books.length > 0 && 
                 <div>
-                    <p>There are no books in your Library, click the link below to add some.</p>
-                    <BaseButton as={Link} to="/add">Add Book</BaseButton>
+                    <p aria-label="No books in your Library. Click here to add some.">
+                        There are no books in your Library, click 
+                        <Link to="/add" aria-label="Add books">here</Link> to add some.</p>
                 </div>}
             {books.length > 0 && (
                 <>
