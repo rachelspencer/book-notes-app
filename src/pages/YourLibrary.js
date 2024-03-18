@@ -30,9 +30,9 @@ function YourLibrary() {
             <h3>Your Library</h3>
             {!books.length > 0 && 
                 <div>
-                    <p aria-label="No books in your Library. Click here to add some.">
+                    <p aria-label="There are no books in your Library. Click tab to access the link to be rerouted to the add book page.">
                         There are no books in your Library, click 
-                        <Link to="/add" aria-label="Add books">here</Link> to add some.</p>
+                        <Link to="/add" aria-label="Click to add books"> here</Link> to add some.</p>
                 </div>}
             {books.length > 0 && (
                 <>
