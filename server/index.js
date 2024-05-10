@@ -1,8 +1,7 @@
-// code to use MongoDB
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '../.env.development.local' });
 const express = require("express");
 const cors = require('cors');
-const { sequelize } = require('./util/database');
+const { Client } = require('@vercel/postgres');
 const { User } = require('./models/User');
 const { Book } = require('./models/Book');
 
@@ -25,13 +24,19 @@ app.post('/login', login)
 app.get('/books', getAllBooks)
 app.post('/books', addBook);
 
-sequelize.sync()
-.then(() => {
-    //seeds database after sequelize syncs ds, and before starting the server
-    // seedDatabase();
-    console.log('Database sync successful');
-    app.listen(PORT, () => {
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  });
+  
+  client.connect()
+    .then(() => {
+      console.log('Connected to PostgreSQL database');
+  
+      app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
-    });
-})
-.catch(error => console.log(error));
+      });
+    })
+    .catch(error => console.error('Error connecting to PostgreSQL database:', error));
