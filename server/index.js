@@ -11,21 +11,21 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-User.hasMany(Book);
-Book.belongsTo(User)
+// User.hasMany(Book);
+// Book.belongsTo(User)
 
-const { register, login } = require('./controllers/auth')
-const { getAllBooks } = require('./controllers/books')
-const { addBook } = require('./controllers/userBooks')
+// const { register, login } = require('./controllers/auth')
+// const { getAllBooks } = require('./controllers/books')
+// const { addBook } = require('./controllers/userBooks')
 
-// Auth
-app.post('/register', register)
-app.post('/login', login)
-app.get('/books', getAllBooks)
-app.post('/books', addBook);
+// // Auth
+// app.post('/register', register)
+// app.post('/login', login)
+// app.get('/books', getAllBooks)
+// app.post('/books', addBook);
 
 const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.POSTGRES_URL,
     ssl: {
       rejectUnauthorized: false,
     },
