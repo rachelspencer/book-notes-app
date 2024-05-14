@@ -1,4 +1,5 @@
 import axios from 'axios';
+import supabase from './config/supabaseClient';
 
 const baseUrl = "http://localhost:3001"
 
@@ -20,28 +21,27 @@ export const searchBookCovers = async (term) => {
   }
 };
   
-export const createBook = async (data) => {
-  try {
-    const { bookInfo, userId, coverUrl } = data;
-    const { title, authors } = bookInfo;
-    console.log("Book info:", bookInfo);
-    console.log("coverUrl:", coverUrl)
+export const createBook = async (bookData) => {
+
+  const { bookInfo, coverUrl } = bookData;
+  const { title, authors } = bookInfo;
   
-    const response = await axios.post(
-      `${baseUrl}/books`,
-      {
-        author: authors[0],
-        userId,
-        coverUrl,
-        title, 
-      }
-    )
+  if (!coverUrl || !title || !authors) {
+    throw new Error("Missing info required to add book.")
+  }
 
-    return response;
+  try {
+    const { data: insertedBook, error } = await supabase
+    .from('book')
+    .insert([{ coverUrl, title, author: authors[0]}])
 
-  } catch (error) {
-    console.log('Create book error:', error)
-    throw error;
+    if (error){
+      console.log("error in createBook", error.message);
+    } else {
+      console.log("Book created successfully:", insertedBook)
+    }
+  } catch (err){
+    console.log("Error in createBook:", err.message)
   }
 };
 

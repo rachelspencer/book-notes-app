@@ -6,11 +6,14 @@ import AuthContext from "../context/authContext";
 import { getBooksForUser } from '../api';
 import BaseButton from '../components/BaseButton'
 import './YourLibrary.css';
+import supabase from '../config/supabaseClient';
 
 
 function YourLibrary() {
     const { userId } = useContext(AuthContext);
     const [ books, setBooks ] = useState([]);
+
+    console.log(supabase);
    
     const fetchBooks = async (userId) => {
         try {

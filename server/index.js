@@ -8,11 +8,12 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+
 // Auth
 // app.post('/register', register)
 // app.post('/login', login)
 // app.get('/books', getAllBooks)
-// app.post('/books', addBook);
+// app.post('/add', addBook);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
