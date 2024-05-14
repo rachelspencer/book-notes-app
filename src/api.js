@@ -31,14 +31,16 @@ export const createBook = async (bookData) => {
   }
 
   try {
-    const { data: insertedBook, error } = await supabase
+    const { data: book, error } = await supabase
     .from('book')
     .insert([{ coverUrl, title, author: authors[0]}])
+    .select()
+
 
     if (error){
       console.log("error in createBook", error.message);
     } else {
-      console.log("Book created successfully:", insertedBook)
+      console.log("Book created successfully:", book)
     }
   } catch (err){
     console.log("Error in createBook:", err.message)
