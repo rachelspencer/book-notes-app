@@ -74,7 +74,7 @@ environment, you will need to alter setp 7. to open the cloned repo.
 
 ## Usage Guidelines
 
-In the root of the directory you will need to run `npm i` in the terminal to install the projects dependencies. In the root you can also run `npm start` to run the server locally. Navigate to the server directory, the run `nodemon index.js` to start the backend. You can then open the project locally. 
+In the root of the directory you will need to run `npm i` in the terminal to install the projects dependencies. In the root you can also run `npm start` to run the server locally. Navigate to the server directory, then run `nodemon index.js` to start the backend. You can then open the project locally. 
 
 ### Database
 
