@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import supabase from '../config/supabaseClient';
 import axios from 'axios';
 import AuthContext from "../context/authContext";
 import zxcvbn from 'zxcvbn';
@@ -7,14 +8,14 @@ import './Auth.css';
 function Auth() {
     const authCtx = useContext(AuthContext);
 
-    const [ username, setUsername ] = useState('');
+    const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ register, setRegister ] = useState(true);
     const [ pwSuggestions, setPwSuggestions ] = useState([]);
 
-    const handleUsername = (event) => {
-        setUsername(event.target.value)
-        console.log(username)
+    const handleEmail = (event) => {
+        setEmail(event.target.value)
+        console.log(email)
     };
 
     const handlePassword = (event) => {
@@ -33,7 +34,7 @@ function Auth() {
         let response;
 
         const body = {
-            username,
+            email,
             password,
         };
 
@@ -41,13 +42,18 @@ function Auth() {
 
         try {
             if (register){
-                response = await axios.post(`${url}/register`, body)
-            } else {
-                response = await axios.post(`${url}/login`, body)
+                // response = await axios.post(`${url}/register`, body)
+
+                const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                })
+            // } else {
+            //     response = await axios.post(`${url}/login`, body)
             }
         } catch (error) {
             console.log('FE Error', error);
-            setUsername('');
+            setEmail('');
             setPassword('');
             }
         console.log('response auth FE', response);
@@ -61,17 +67,17 @@ function Auth() {
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
                 <form className ="auth_form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="email">Email</label>
                     <input
-                        className="username_pw_input"
-                        value={username}
+                        className="email_pw_input"
+                        value={email}
                         type="text"
-                        id="username"
-                        onChange={handleUsername}
+                        id="email"
+                        onChange={handleEmail}
                     />
                     <label htmlFor="password">Password</label>
                     <input
-                        className="username_pw_input"
+                        className="email_pw_input"
                         value={password}
                         type="password"
                         id="password"
