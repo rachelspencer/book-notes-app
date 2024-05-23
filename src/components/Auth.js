@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import supabase from '../config/supabaseClient';
-import axios from 'axios';
 import AuthContext from "../context/authContext";
 import zxcvbn from 'zxcvbn';
 import './Auth.css';
 
 function Auth() {
     const authCtx = useContext(AuthContext);
+
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -21,7 +21,7 @@ function Auth() {
     const handlePassword = (event) => {
         setPassword(event.target.value);
         const evaluation = zxcvbn(password)
-        console.log("Evaluation:", evaluation)
+      
         setPwSuggestions(evaluation.feedback.suggestions)
     };
 
@@ -31,36 +31,60 @@ function Auth() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let response;
-
-        const body = {
-            email,
-            password,
-        };
-
-        const url = "http://localhost:3001"
 
         try {
             if (register){
-                // response = await axios.post(`${url}/register`, body)
 
                 const { data, error } = await supabase.auth.signUp({
                     email,
                     password,
                 })
-            // } else {
-            //     response = await axios.post(`${url}/login`, body)
+
+                if (error){
+                    alert("Error in signUp", error)
+                }
+
+            } else {
+
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password,
+                })
+
+                if (error){
+                    alert("Error in signing in", error)
+                }
             }
+
         } catch (error) {
-            console.log('FE Error', error);
+            console.log('FE signUp/signIn Error', error);
+
             setEmail('');
             setPassword('');
             }
-        console.log('response auth FE', response);
-        authCtx.login(response.data.token, response.data.exp, response.data.userId)
+
+            getUserSession();
         };
-    
-    // capture user inputs through form
+
+        const getUserSession = async () => {
+
+            try {
+                
+                const { data, error } = await supabase.auth.getSession()
+               
+                authCtx.login(data.session.access_token, data.session.user.id)
+
+                if (error){
+                    alert("Error in retrieving session data", error)
+                }
+            } catch (error) {
+                console.log("Error fetching current user", error)
+            }
+
+        }
+
+       
+
     return (
         <main>
             <h1>BookNotes</h1>
