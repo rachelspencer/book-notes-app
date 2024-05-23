@@ -1,10 +1,8 @@
 import { useState, createContext } from "react";
 
-
-
 // const { data: { user } } = await supabase.auth.getUser()
 // console.log("user data", user)
-let logoutTimer;
+// let logoutTimer;
 
 const AuthContext =createContext({
     token: '',
@@ -28,21 +26,6 @@ export const AuthContextProvider = ({children}) => {
   const [token, setToken] = useState(initialToken);
   const [userId, setUserId] = useState(initialUserId);
 
-  // const logout = () => {
-  //   setToken(null);
-  //   setUserId(null);
-
-  //   localStorage.removeItem('token');
-  //   localStorage.removeItem('userId');
-  //   localStorage.removeItem('exp');
-
-  //   const localData = getLocalData();
-  //   const remainingTime = localData ? localData.duration : 0;
-  //   if (remainingTime) {
-  //     clearTimeout(logoutTimer)
-  //   }
-  // };
-
   const login = (token, userId) => {
     setToken(token);
     setUserId(userId);
@@ -51,10 +34,19 @@ export const AuthContextProvider = ({children}) => {
     localStorage.setItem('userId', userId);
   }
 
+  const logout = () => {
+    setToken(null);
+    setUserId(null);
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+
+  };
+
   const contextValue = {
     token,
     login,
-    // logout,
+    logout,
     userId
   };
    
