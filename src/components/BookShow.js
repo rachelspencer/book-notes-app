@@ -13,7 +13,7 @@ function BookShow({isInLibrary, book}) {
     }
 
     const handleClick = (event) => {
-        createBook( { coverUrl, ...book } )
+        createBook( { userId, coverUrl, ...book } )
         setShowModal(true);
     };
 

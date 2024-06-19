@@ -7,7 +7,6 @@ import './Auth.css';
 function Auth() {
     const authCtx = useContext(AuthContext);
 
-
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ register, setRegister ] = useState(true);
@@ -20,7 +19,7 @@ function Auth() {
 
     const handlePassword = (event) => {
         setPassword(event.target.value);
-        const evaluation = zxcvbn(password)
+        const evaluation = zxcvbn(event.target.value);
       
         setPwSuggestions(evaluation.feedback.suggestions)
     };
@@ -34,37 +33,46 @@ function Auth() {
 
         try {
             if (register){
-
-                const { data, error } = await supabase.auth.signUp({
+               const { data, error } = await supabase.auth.signUp({
                     email,
                     password,
                 })
+                console.log("data from signUp:", data);
 
                 if (error){
-                    alert("Error in signUp", error)
+                    console.log('error', error.message);
+                    return alert(error.message)
                 }
 
+                const { user } = data;
+                const { id, user_metadata } = user;
+                
+                if (id && !user_metadata.email_verified) {
+                    return alert('Please check your email to confirm your account')
+                }
             } else {
-
                 const { data, error } = await supabase.auth.signInWithPassword({
                     email,
                     password,
-                })
+                });
+
+                console.log("data from signInWithPassword:", data);
 
                 if (error){
-                    alert("Error in signing in", error)
+                    return alert("Error in signing in. If you've already signed up, check your email for a confirmation email.")
                 }
-            }
+                getUserSession();
 
+            }
+     
         } catch (error) {
-            console.log('FE signUp/signIn Error', error);
+            console.log('FE signUp/signIn Error: ', error);
 
             setEmail('');
             setPassword('');
-            }
+        }
 
-            getUserSession();
-        };
+    };
 
         const getUserSession = async () => {
 
@@ -75,15 +83,13 @@ function Auth() {
                 authCtx.login(data.session.access_token, data.session.user.id)
 
                 if (error){
-                    alert("Error in retrieving session data", error)
+                    alert("Error in retrieving session data: ", error)
                 }
             } catch (error) {
-                console.log("Error fetching current user", error)
+                console.log("Error fetching current user: ", error)
             }
 
         }
-
-       
 
     return (
         <main>
