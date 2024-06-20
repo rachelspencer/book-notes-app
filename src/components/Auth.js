@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import axios from 'axios';
+import supabase from '../config/supabaseClient';
 import AuthContext from "../context/authContext";
 import zxcvbn from 'zxcvbn';
 import './Auth.css';
@@ -7,20 +7,20 @@ import './Auth.css';
 function Auth() {
     const authCtx = useContext(AuthContext);
 
-    const [ username, setUsername ] = useState('');
+    const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ register, setRegister ] = useState(true);
     const [ pwSuggestions, setPwSuggestions ] = useState([]);
 
-    const handleUsername = (event) => {
-        setUsername(event.target.value)
-        console.log(username)
+    const handleEmail = (event) => {
+        setEmail(event.target.value)
+        console.log(email)
     };
 
     const handlePassword = (event) => {
         setPassword(event.target.value);
-        const evaluation = zxcvbn(password)
-        console.log("Evaluation:", evaluation)
+        const evaluation = zxcvbn(event.target.value);
+      
         setPwSuggestions(evaluation.feedback.suggestions)
     };
 
@@ -30,48 +30,84 @@ function Auth() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        let response;
-
-        const body = {
-            username,
-            password,
-        };
-
-        const url = "http://localhost:3001"
 
         try {
             if (register){
-                response = await axios.post(`${url}/register`, body)
+               const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                })
+                console.log("data from signUp:", data);
+
+                if (error){
+                    console.log('error', error.message);
+                    return alert(error.message)
+                }
+
+                const { user } = data;
+                const { id, user_metadata } = user;
+                
+                if (id && !user_metadata.email_verified) {
+                    return alert('Please check your email to confirm your account')
+                }
             } else {
-                response = await axios.post(`${url}/login`, body)
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password,
+                });
+
+                console.log("data from signInWithPassword:", data);
+
+                if (error){
+                    return alert("Error in signing in. If you've already signed up, check your email for a confirmation email.")
+                }
+                getUserSession();
+
             }
+     
         } catch (error) {
-            console.log('FE Error', error);
-            setUsername('');
+            console.log('FE signUp/signIn Error: ', error);
+
+            setEmail('');
             setPassword('');
+        }
+
+    };
+
+        const getUserSession = async () => {
+
+            try {
+                
+                const { data, error } = await supabase.auth.getSession()
+               
+                authCtx.login(data.session.access_token, data.session.user.id)
+
+                if (error){
+                    alert("Error in retrieving session data: ", error)
+                }
+            } catch (error) {
+                console.log("Error fetching current user: ", error)
             }
-        console.log('response auth FE', response);
-        authCtx.login(response.data.token, response.data.exp, response.data.userId)
-        };
-    
-    // capture user inputs through form
+
+        }
+
     return (
         <main>
             <h1>BookNotes</h1>
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
                 <form className ="auth_form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="email">Email</label>
                     <input
-                        className="username_pw_input"
-                        value={username}
+                        className="email_pw_input"
+                        value={email}
                         type="text"
-                        id="username"
-                        onChange={handleUsername}
+                        id="email"
+                        onChange={handleEmail}
                     />
                     <label htmlFor="password">Password</label>
                     <input
-                        className="username_pw_input"
+                        className="email_pw_input"
                         value={password}
                         type="password"
                         id="password"
