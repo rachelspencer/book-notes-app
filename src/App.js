@@ -14,7 +14,7 @@ function App() {
     return (
         <div className='app_container'>
             {authCtx.token && <NavBar/>}
-            {authCtx.token && <h2>BookNotes</h2>}
+            {authCtx.token && <h2>Book Memos</h2>}
             <Routes>
                 <Route exact path="/auth" element={!authCtx.token ? <Login/> : <Navigate to='/'/>}/>
                 <Route exact path="/" element={authCtx.token ? <YourLibrary/> : <Navigate to='/auth'/>}/>

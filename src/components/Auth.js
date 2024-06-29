@@ -93,7 +93,7 @@ function Auth() {
 
     return (
         <main>
-            <h1>BookNotes</h1>
+            <h1>Book Memos</h1>
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
                 <form className ="auth_form" onSubmit={handleSubmit}>

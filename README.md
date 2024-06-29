@@ -1,8 +1,8 @@
-# BookNotes 📖
+# Book Memos 📖
 
 ## An app that digitalizes your home library 💻📚
 
-Do you own a lot of books at home? Ever wonder if you already have a particular book when you're at the book shop? Well fear no longer, BookNotes is here to solve your issue! This app allows you to search books by author or title. When a match is found you can add the book to your library. Of course a pretty thumbnail picture will aid in displaying your collection in the Library section of the app. Great news right? Now you will stop doubling up on books... which means your stocking stuffer inventory will be depleted, but you can always fall back on the classic sock option.
+Do you own a lot of books at home? Ever wonder if you already have a particular book when you're at the book shop? Well fear no longer, Book Memos is here to solve your issue! This app allows you to search books by author or title. When a match is found you can add the book to your library. Of course a pretty thumbnail picture will aid in displaying your collection in the Library section of the app. Great news right? Now you will stop doubling up on books... which means your stocking stuffer inventory will be depleted, but you can always fall back on the classic sock option.
 
 ## Watch my demo video!
 
