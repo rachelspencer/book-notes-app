@@ -7,89 +7,96 @@ import './Auth.css';
 function Auth() {
     const authCtx = useContext(AuthContext);
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [pwSuggestions, setPwSuggestions] = useState([]);
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+    const [ register, setRegister ] = useState(true);
+    const [ pwSuggestions, setPwSuggestions ] = useState([]);
 
     const handleEmail = (event) => {
-        setEmail(event.target.value);
+        setEmail(event.target.value)
+        console.log(email)
     };
 
     const handlePassword = (event) => {
         setPassword(event.target.value);
         const evaluation = zxcvbn(event.target.value);
-        setPwSuggestions(evaluation.feedback.suggestions);
+      
+        setPwSuggestions(evaluation.feedback.suggestions)
     };
 
-    const handleRegister = async () => {
+    const handleClick = (event) => {
+        setRegister(!register)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
         try {
-            const { data, error } = await supabase.auth.signUp({
-                email,
-                password,
-            });
+            if (register){
+               const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                })
+                console.log("data from signUp:", data);
 
-            if (error) {
-                console.log('error', error.message);
-                return alert(error.message);
+                if (error){
+                    console.log('error', error.message);
+                    return alert(error.message)
+                }
+
+                const { user } = data;
+                const { id, user_metadata } = user;
+                
+                if (id && !user_metadata.email_verified) {
+                    return alert('Please check your email to confirm your account')
+                }
+            } else {
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password,
+                });
+
+                console.log("data from signInWithPassword:", data);
+
+                if (error){
+                    return alert("Error in signing in. If you've already signed up, check your email for a confirmation email.")
+                }
+                getUserSession();
+
             }
-
-            const { user } = data;
-            const { id, user_metadata } = user;
-
-            if (id && !user_metadata.email_verified) {
-                return alert('Please check your email to confirm your account');
-            }
-
-            await getUserSession();
+     
         } catch (error) {
-            console.log('Error in signUp:', error);
+            console.log('FE signUp/signIn Error: ', error);
+
             setEmail('');
             setPassword('');
         }
+
     };
 
-    const handleLogin = async () => {
-        try {
-            
-            const { error } = await supabase.auth.signIn({
-                email,
-                password,
-            });
+        const getUserSession = async () => {
 
-            if (error) {
-                return alert("Error in signing in. If you've already signed up, check your email for a confirmation email.");
+            try {
+                
+                const { data, error } = await supabase.auth.getSession()
+               
+                authCtx.login(data.session.access_token, data.session.user.id)
+
+                if (error){
+                    alert("Error in retrieving session data: ", error)
+                }
+            } catch (error) {
+                console.log("Error fetching current user: ", error)
             }
 
-            await getUserSession();
-        } catch (error) {
-            console.log('Error in signIn:', error);
-            setEmail('');
-            setPassword('');
         }
-    };
-
-    const getUserSession = async () => {
-        try {
-            const { data, error } = await supabase.auth.getSession();
-
-            if (data) {
-                authCtx.login(data.access_token, data.user.id);
-            }
-
-            if (error) {
-                alert("Error in retrieving session data: ", error);
-            }
-        } catch (error) {
-            console.log("Error fetching current user: ", error);
-        }
-    };
 
     return (
         <main>
             <h1>Book Memos</h1>
             <h3 className="landing_page_tag">Your digital library.</h3>
             <div className="login">
-                <form className="auth_form">
+                <form className ="auth_form" onSubmit={handleSubmit}>
                     <label htmlFor="email">Email</label>
                     <input
                         className="email_pw_input"
@@ -115,12 +122,15 @@ function Auth() {
                             ))}
                         </ul>
                     )}
+                    <button className="auth_btn">
+                        {register ? "Register" : "Login"}
+                    </button>
                 </form>
-                <button className="auth_btn" onClick={handleRegister}>Register</button>
-                <button className="auth_btn" onClick={handleLogin}>Login</button>
+                <button
+                    className="auth_btn" onClick={handleClick}>Need to {register? "Login" : "Register"}?</button>
             </div>
         </main>
     );
-}
+};
 
 export default Auth;
