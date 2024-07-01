@@ -3,6 +3,8 @@ import supabase from './config/supabaseClient';
 
 const baseUrl = "http://localhost:3001"
 
+
+
 // books api
 export const searchBookCovers = async (term) => {
   try {
@@ -21,26 +23,25 @@ export const searchBookCovers = async (term) => {
   }
 };
   
-export const createBook = async (bookData) => {
+export const createBook = async (bookData, userId) => {
 
   const { bookInfo, coverUrl } = bookData;
   const { title, authors } = bookInfo;
   
-  if (!coverUrl || !title || !authors) {
+  if (!coverUrl || !title || !authors || !userId) {
     throw new Error("Missing info required to add book.")
   }
 
   try {
     const { data: book, error } = await supabase
     .from('book')
-    .insert([{ coverUrl, title, author: authors[0]}])
-    .select()
+    .insert([{ coverUrl, title, author: authors[0], user_id: userId }])
 
 
     if (error){
       console.log("error in createBook", error.message);
     } else {
-      console.log("Book created successfully:", book)
+      console.log(`${title} was successfully added to your library.`)
     }
   } catch (err){
     console.log("Error in createBook:", err.message)

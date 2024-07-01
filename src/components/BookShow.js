@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { createBook } from '../api';
 import AuthContext from "../context/authContext";
 import Modal from './Modal';
+import { toast } from 'react-toastify';
 import './BookShow.css';
 
 function BookShow({isInLibrary, book}) {
@@ -13,8 +14,9 @@ function BookShow({isInLibrary, book}) {
     }
 
     const handleClick = (event) => {
-        createBook( { userId, coverUrl, ...book } )
-        setShowModal(true);
+        createBook({ coverUrl, ...book }, userId)
+        toast.success(`Book added to the library! 👍`);
+        // setShowModal(true);
     };
 
     const closeModal = () => {
