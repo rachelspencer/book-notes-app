@@ -1,5 +1,6 @@
 import axios from 'axios';
 import supabase from './config/supabaseClient';
+import { toast } from 'react-toastify';
 
 const baseUrl = "http://localhost:3001"
 
@@ -42,6 +43,7 @@ export const createBook = async (bookData, userId) => {
       console.log("error in createBook", error.message);
     } else {
       console.log(`${title} was successfully added to your library.`)
+      toast.success(`${title} was successfully added to your library.`);
     }
   } catch (err){
     console.log("Error in createBook:", err.message)
