@@ -36,7 +36,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    background-color: rgba(255, 0, 0, .2);
     border-radius: 17px;
 }
 
