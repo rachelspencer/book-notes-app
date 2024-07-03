@@ -6,7 +6,7 @@ import './BookShow.css';
 function BookShow({isInLibrary, book}) {
     const { userId } = useContext(AuthContext);
     const coverUrl = book.coverUrl || book?.thumbnails?.small;
-    
+
     if (!coverUrl) {
         return null;
     }

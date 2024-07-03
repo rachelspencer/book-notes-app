@@ -42,7 +42,6 @@ export const createBook = async (bookData, userId) => {
     if (error){
       console.log("error in createBook", error.message);
     } else {
-      console.log(`${title} was successfully added to your library.`)
       toast.success(`${title} was successfully added to your library.`);
     }
   } catch (err){
