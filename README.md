@@ -64,7 +64,7 @@ environment, you will need to alter setp 7. to open the cloned repo.
    
 ![mkdirTerminalDemo](https://github.com/rachelspencer/book-notes-app/assets/111473039/b8c9ac95-09a8-4971-8cdd-79194fa85f20)
 
-6. Once you have successfully navigated to the directory, run `git clone` and paste the the web URL right after (copied to your clipboard in step four).
+6. Once you have successfully navigated to the directory, run `git clone` and paste the web URL right after (copied to your clipboard in step four).
    
 ![CloneRepo](https://github.com/rachelspencer/book-notes-app/assets/111473039/e9da32d2-e7e7-469f-8ad2-22d847538d73)
 
